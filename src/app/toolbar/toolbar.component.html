@@ -1,0 +1,32 @@
+<mat-toolbar>
+  <button
+    mat-icon-button
+    class="toolbar-icon"
+    aria-label="icon-button with home icon"
+  >
+    <mat-icon>cottage</mat-icon>
+  </button>
+
+  <span>{{ title }}</span>
+  <span class="example-spacer"></span>
+
+  <!-- github -->
+  <button mat-icon-button class="toolbar-icon github-icon" (click)="goToLink(personalGithubUrl)">
+    <mat-icon svgIcon="github-dark" aria-hidden="false"></mat-icon>
+  </button>
+  <!-- linkedin -->
+  <button mat-icon-button class="toolbar-icon linkedin-icon" (click)="goToLink(personalLinkedinUrl)">
+    <mat-icon svgIcon="linkedin-dark" aria-hidden="false"></mat-icon>
+  </button>
+  <!-- xing -->
+  <button mat-icon-button class="toolbar-icon xing-icon" (click)="goToLink(personalXingUrl)">
+    <mat-icon svgIcon="xing-dark" aria-hidden="false"></mat-icon>
+  </button>
+
+  <!-- doit - open rectangle with personal homepage to share -->
+  <button color="accent" mat-icon-button class="toolbar-icon share-icon">
+    <mat-icon>share</mat-icon>
+  </button>
+
+  <mat-tooltip-component></mat-tooltip-component>
+</mat-toolbar>
