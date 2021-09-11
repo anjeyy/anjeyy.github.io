@@ -8,7 +8,7 @@ import { DomSanitizer } from '@angular/platform-browser';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent {
-  title: string = 'personal-homepage';
+  title: string = 'anjeyy.github.io';
   private githubUrl: string = 'assets/icons/github.svg';
   private linkedinUrl: string = 'assets/icons/linkedin.svg';
   private xingUrl: string = 'assets/icons/xing.svg';
