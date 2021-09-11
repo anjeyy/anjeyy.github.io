@@ -1,0 +1,98 @@
+<mat-toolbar>
+  <!-- space placeholder toolbar row -->
+  <mat-toolbar-row class="mat-toolbar-placeholder"></mat-toolbar-row>
+
+  <mat-toolbar-row>
+    <mat-tooltip-component></mat-tooltip-component>
+    <mat-tooltip-component></mat-tooltip-component>
+
+    <!-- home button -->
+    <button
+      mat-fab
+      color="primary"
+      class="toolbar-icon"
+      matTooltip="welcome page"
+    >
+      <mat-icon>cottage</mat-icon>
+    </button>
+
+    <mat-tooltip-component></mat-tooltip-component>
+    <mat-tooltip-component></mat-tooltip-component>
+    <span class="fancy-title">{{title}}</span>
+    <span class="spacer"></span>
+
+    <!-- github -->
+    <button
+      mat-icon-button
+      class="toolbar-icon github-icon"
+      matTooltip="github profile"
+      (click)="goToLinkWithNewTab(myPersonalUrls.github)"
+    >
+      <mat-icon svgIcon="github-dark" aria-hidden="false"></mat-icon>
+    </button>
+
+    <!-- linkedin -->
+    <button
+      mat-icon-button
+      class="toolbar-icon linkedin-icon"
+      matTooltip="linked profile"
+      (click)="goToLinkWithNewTab(myPersonalUrls.linkedin)"
+    >
+      <mat-icon svgIcon="linkedin-dark" aria-hidden="false"></mat-icon>
+    </button>
+
+    <!-- xing -->
+    <button
+      mat-icon-button
+      class="toolbar-icon xing-icon"
+      matTooltip="xing profile"
+      (click)="goToLinkWithNewTab(myPersonalUrls.xing)"
+    >
+      <mat-icon svgIcon="xing-dark" aria-hidden="false"></mat-icon>
+    </button>
+
+    <!-- share -->
+    <button
+      color="accent"
+      mat-icon-button
+      class="toolbar-icon share-icon"
+      matTooltip="share this website"
+      [matMenuTriggerFor]="menu"
+    >
+      <mat-menu class="share-menu" #menu="matMenu">
+        <!-- facebook -->
+        <button
+          mat-menu-item
+          data-href="abc"
+          (click)="shareLinkOnFacebook()"
+        >
+          <mat-icon class="facebook-icon">facebook</mat-icon>
+          <span>share on facebook</span>
+        </button>
+        <!-- twitter -->
+        <button mat-menu-item (click)="prePopulateTwitterMessage()">
+          <mat-icon class="twitter-icon" svgIcon="twitter-dark"
+            >twitter</mat-icon
+          >
+          <span>share on twitter</span>
+        </button>
+        <!-- link -->
+        <button
+          mat-menu-item
+          [cdkCopyToClipboard]="myPersonalUrls.homepage"
+          (click)="showCopiedInfo()"
+        >
+          <mat-icon>link</mat-icon>
+          <span>share via link</span>
+        </button>
+      </mat-menu>
+
+      <mat-icon>share</mat-icon>
+    </button>
+
+    <mat-tooltip-component></mat-tooltip-component>
+  </mat-toolbar-row>
+
+  <!-- space placeholder toolbar row -->
+  <mat-toolbar-row class="mat-toolbar-placeholder"></mat-toolbar-row>
+</mat-toolbar>
