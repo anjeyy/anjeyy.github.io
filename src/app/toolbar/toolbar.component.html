@@ -16,10 +16,9 @@
       <mat-icon>cottage</mat-icon>
     </button>
 
-    <!-- doit route to starting page -->
     <mat-tooltip-component></mat-tooltip-component>
     <mat-tooltip-component></mat-tooltip-component>
-    <span class="fancy-title">Page of Andjelko</span>
+    <span class="fancy-title">{{title}}</span>
     <span class="spacer"></span>
 
     <!-- github -->
@@ -52,17 +51,42 @@
       <mat-icon svgIcon="xing-dark" aria-hidden="false"></mat-icon>
     </button>
 
-    <!-- doit - open new card -> share on twitter/facebook/copyLink? -->
     <!-- share -->
     <button
       color="accent"
       mat-icon-button
       class="toolbar-icon share-icon"
-      #tooltip="matTooltip"
       matTooltip="share this website"
-      [cdkCopyToClipboard]="myPersonalUrls.homepage"
-      (click)="showCopiedInfo()"
+      [matMenuTriggerFor]="menu"
     >
+      <mat-menu class="share-menu" #menu="matMenu">
+        <!-- facebook -->
+        <button
+          mat-menu-item
+          data-href="abc"
+          (click)="shareLinkOnFacebook()"
+        >
+          <mat-icon class="facebook-icon">facebook</mat-icon>
+          <span>share on facebook</span>
+        </button>
+        <!-- twitter -->
+        <button mat-menu-item (click)="prePopulateTwitterMessage()">
+          <mat-icon class="twitter-icon" svgIcon="twitter-dark"
+            >twitter</mat-icon
+          >
+          <span>share on twitter</span>
+        </button>
+        <!-- link -->
+        <button
+          mat-menu-item
+          [cdkCopyToClipboard]="myPersonalUrls.homepage"
+          (click)="showCopiedInfo()"
+        >
+          <mat-icon>link</mat-icon>
+          <span>share via link</span>
+        </button>
+      </mat-menu>
+
       <mat-icon>share</mat-icon>
     </button>
 
@@ -72,24 +96,3 @@
   <!-- space placeholder toolbar row -->
   <mat-toolbar-row class="mat-toolbar-placeholder"></mat-toolbar-row>
 </mat-toolbar>
-
-<!--<mat-grid-list cols="3" rowHeight="2:1">-->
-<!--  <mat-grid-tile>1</mat-grid-tile>-->
-<!--  <mat-grid-tile>2</mat-grid-tile>-->
-<!--  <mat-grid-tile>3</mat-grid-tile>-->
-<!--</mat-grid-list>-->
-
-<!-- doit refactor to component appropriately & tooltip for tabs & nice icons!!-->
-<!-- https://material.angular.io/components/tabs/examples -->
-<!-- doit lazy loading?-->
-<mat-tab-group mat-align-tabs="center" animationDuration="1500ms" dynamicHeight>
-  <mat-tab label="About me">
-    <div class="example-small-box mat-elevation-z4">Small content</div></mat-tab
-  >
-  <mat-tab disabled label="">disabled</mat-tab>
-  <mat-tab label="Work experience"> Content 2 </mat-tab>
-  <mat-tab disabled label="">disabled</mat-tab>
-  <mat-tab label="Current Techstack">
-    <div class="example-large-box mat-elevation-z4">Large content</div>
-  </mat-tab>
-</mat-tab-group>

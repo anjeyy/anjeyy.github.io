@@ -12,9 +12,11 @@ export class AppComponent {
   private githubUrl: string = 'assets/icons/github.svg';
   private linkedinUrl: string = 'assets/icons/linkedin.svg';
   private xingUrl: string = 'assets/icons/xing.svg';
+  private twitterUrl: string = 'assets/icons/twitter.svg';
 
   // doit - refactor for icon module registerer
   // doit - tech stack icons
+  // doit - route to appropriate tabs (lazy loading - if necessary)
 
   constructor(
     private domSanitizer: DomSanitizer,
@@ -32,6 +34,10 @@ export class AppComponent {
       .addSvgIcon(
         'xing-dark',
         this.domSanitizer.bypassSecurityTrustResourceUrl(this.xingUrl)
+      )
+      .addSvgIcon(
+        'twitter-dark',
+        this.domSanitizer.bypassSecurityTrustResourceUrl(this.twitterUrl)
       );
   }
 }

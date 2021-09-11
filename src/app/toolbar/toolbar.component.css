@@ -1,3 +1,7 @@
+.mat-toolbar {
+  background-color: rgba(255, 235, 205, 0.45);
+}
+
 .mat-toolbar-placeholder {
   height: 2em;
 }
@@ -17,10 +21,15 @@
   color: seagreen;
 }
 
-.mat-toolbar {
-  background-color: rgba(255, 235, 205, 0.45);
+/deep/ .mat-menu-content {
+  background-color: rgba(211, 211, 211, 0.35);
 }
 
-.mat-tab-group {
-  background:rgba(255, 235, 205, 0.35);
+.facebook-icon {
+  color: royalblue;
 }
+
+.twitter-icon {
+  color: dodgerblue;
+}
+
