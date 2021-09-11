@@ -1,4 +1,12 @@
-.example-spacer {
+.mat-toolbar-placeholder {
+  height: 2em;
+}
+
+.fancy-title {
+  text-shadow: 2px 1px 6px lightslategrey;
+}
+
+.spacer {
   flex: 1 1 auto;
 }
 
@@ -7,4 +15,12 @@
 }
 .xing-icon {
   color: seagreen;
+}
+
+.mat-toolbar {
+  background-color: rgba(255, 235, 205, 0.45);
+}
+
+.mat-tab-group {
+  background:rgba(255, 235, 205, 0.35);
 }

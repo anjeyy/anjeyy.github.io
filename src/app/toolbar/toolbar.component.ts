@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { myPersonalUrls, PersonalUrls } from '../PersonalUrls';
+import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({
   selector: 'app-toolbar',
@@ -6,17 +8,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./toolbar.component.css'],
 })
 export class ToolbarComponent implements OnInit {
-  title: string = 'personal homepage of andjelko';
-  personalGithubUrl: string = 'https://github.com/anjeyy';
-  personalLinkedinUrl: string =
-    'https://www.linkedin.com/in/andjelko-p-86374b15a/';
-  personalXingUrl: string = 'https://www.xing.com/profile/Andjelko_Perisic/cv';
+  title: string = ' Welcome to my personal homepage';
+  myPersonalUrls: PersonalUrls = myPersonalUrls;
+  private seconds: number = 1000;
+  private durationInSeconds: number = 1.5 * this.seconds;
 
-  constructor() {}
+  constructor(private matSnackBar: MatSnackBar) {}
 
   ngOnInit(): void {}
 
-  goToLink(url: string): void {
+  goToLinkWithNewTab(url: string): void {
     window.open(url, '_blank');
+  }
+
+  showCopiedInfo(): void {
+    this.matSnackBar.open('homepage link copied to clipboard', 'dismiss', {
+      duration: this.durationInSeconds,
+    });
   }
 }
