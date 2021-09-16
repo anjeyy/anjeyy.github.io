@@ -11,7 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-      - run: ls -la
+        env:
+          DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
       - run: chmod +x ./deployment/update-gh-pages.sh
       - run: sudo ./deployment/update-gh-pages.sh
         env:
