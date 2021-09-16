@@ -1,5 +1,8 @@
 name: GitHub Pages
 
+env:
+  DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
+
 on:
   pull_request:
   push:
