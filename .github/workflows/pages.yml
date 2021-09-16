@@ -17,7 +17,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - run: chmod +x ./deployment/update-gh-pages.sh
-      - run: sudo ./deployment/update-gh-pages.sh
+      - run: sudo ./deployment/update-gh-pages.sh ${{ secrets.DEPLOY_TOKEN }}
 
       - uses: actions/setup-node@v1
         with:
