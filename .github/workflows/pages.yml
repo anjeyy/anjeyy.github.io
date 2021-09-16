@@ -1,10 +1,6 @@
 name: Angular GitHub CI
 
-env:
-  GITHUB_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
-
 on:
-  pull_request: #remove
   push:
     branches:
       - main
@@ -44,11 +40,11 @@ jobs:
         run: |
           npm ci
       - name: Build
+        # script 'deploy' in 'package.json'
         run: |
           npm run build
       - name: Deploy
         env:
           GH_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
-        # script 'deploy' in 'package.json'
         run: |
-          npm run ng -- deploy --base-href=/anjeyy.github.io/ --name="automated gh-pages" --email=automated.gh-pages@bot.github.com
+          npm run ng -- deploy --base-href=/anjeyy.github.io/ --name="automated deployment" --email=automated.gh-pages@bot.github.com
