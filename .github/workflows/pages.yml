@@ -1,9 +1,8 @@
 name: Angular GitHub CI
 
 on:
+  pull_request:
   push:
-    branches:
-      - main
 
 jobs:
   ci:
@@ -44,7 +43,8 @@ jobs:
         run: |
           npm run build
       - name: Deploy
+        if: github.ref == 'refs/heads/main'
         env:
           GH_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
         run: |
-          npm run ng -- deploy --base-href=/anjeyy.github.io/ --name="automated deployment" --email=automated.gh-pages@bot.github.com
+          npm run ng -- deploy --base-href=anjeyy.github.io --name="automated deployment" --email=automated.gh-pages@bot.github.com
