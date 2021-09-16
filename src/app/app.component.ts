@@ -13,6 +13,7 @@ export class AppComponent {
   private linkedinUrl: string = 'assets/icons/linkedin.svg';
   private xingUrl: string = 'assets/icons/xing.svg';
   private twitterUrl: string = 'assets/icons/twitter.svg';
+  private stackoverflowUrl: string = 'assets/icons/stackoverflow.svg';
 
   // doit - refactor for icon module registerer
   // doit - tech stack icons
@@ -26,6 +27,10 @@ export class AppComponent {
       .addSvgIcon(
         'github-dark',
         this.domSanitizer.bypassSecurityTrustResourceUrl(this.githubUrl)
+      )
+      .addSvgIcon(
+        'stackoverflow-dark',
+        this.domSanitizer.bypassSecurityTrustResourceUrl(this.stackoverflowUrl)
       )
       .addSvgIcon(
         'linkedin-dark',
