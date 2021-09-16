@@ -47,6 +47,8 @@ jobs:
         run: |
           npm run build
       - name: Deploy
+        env:
+          GH_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
         # script 'deploy' in 'package.json'
         run: |
           npm run deploy
