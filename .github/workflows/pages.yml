@@ -11,12 +11,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v1
-        env:
-          DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
+      - run: export ${{ secrets.DEPLOY_TOKEN }}
       - run: chmod +x ./deployment/update-gh-pages.sh
       - run: sudo ./deployment/update-gh-pages.sh
         env:
-          DEPLOY_TOKEN: ${{ gh-pages.DEPLOY_TOKEN }}
+          DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
 
       - uses: actions/setup-node@v1
         with:
