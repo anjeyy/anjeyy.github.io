@@ -24,7 +24,6 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: ${{ matrix.node-version }}
-          GH_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
 
       - name: Cache node modules
         id: cache-nodemodules
@@ -32,6 +31,7 @@ jobs:
         env:
           cache-name: cache-node-modules
         with:
+          GH_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
           # caching node_modules
           path: node_modules
           key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
