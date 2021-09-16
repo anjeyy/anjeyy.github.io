@@ -43,4 +43,5 @@ jobs:
           npm run build
       - name: Deploy
         run: |
+          npm run add angular-cli-ghpages
           npm run deploy
