@@ -12,14 +12,12 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-    env:
-      DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
     steps:
       - uses: actions/checkout@v1
         with:
-          DEPLOY_TOKEN: ${{ DEPLOY_TOKEN }}
-          GITHUB_REPOSITORY: ${{ GITHUB_REPOSITORY }}
-          GITHUB_ACTOR: ${{ GITHUB_ACTOR }}
+          DEPLOY_TOKEN: ${{ env.DEPLOY_TOKEN }}
+          GITHUB_REPOSITORY: ${{ env.GITHUB_REPOSITORY }}
+          GITHUB_ACTOR: ${{ env.GITHUB_ACTOR }}
       - run: chmod +x ./deployment/update-gh-pages.sh
       - run: ./deployment/update-gh-pages.sh
 
