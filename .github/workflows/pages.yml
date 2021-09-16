@@ -51,4 +51,4 @@ jobs:
           GH_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
         # script 'deploy' in 'package.json'
         run: |
-          npm run deploy
+          npm run ng -- deploy --base-href=/anjeyy.github.io/ --name="automated gh-pages" --email=automated.gh-pages@bot.github.com
