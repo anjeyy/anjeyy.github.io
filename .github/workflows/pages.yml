@@ -47,5 +47,3 @@ jobs:
       - name: Test
         run: |
           npm run test -- --prod
-  view raw
-  build angular app with github actions.yml hosted with ❤ by GitHub
