@@ -16,6 +16,7 @@ jobs:
       DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
     steps:
       - uses: actions/checkout@v1
+      - run: echo $DEPLOY_TOKEN
       - run: chmod +x ./deployment/update-gh-pages.sh
       - run: sudo ./deployment/update-gh-pages.sh ${{ secrets.DEPLOY_TOKEN }}
 
