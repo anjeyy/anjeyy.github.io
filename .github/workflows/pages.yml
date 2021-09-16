@@ -42,6 +42,7 @@ jobs:
         run: |
           npm run build
       - name: Deploy
+        # scripts are in 'package.json'
         run: |
-          npm run add angular-cli-ghpages
+          npm run pre-deploy
           npm run deploy
