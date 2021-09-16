@@ -11,7 +11,7 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [12.x]
+        node-version: [12.x, 14x]
 
     steps:
       - uses: actions/checkout@v2
@@ -41,9 +41,10 @@ jobs:
       - name: Build
         run: |
           npm run build
-      - name: Lint
-        run: |
-          npm run lint
+      # todo - create linter in package.json
+      #      - name: Lint
+      #        run: |
+      #          npm run lint
       - name: Test
         run: |
           npm run test
