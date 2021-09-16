@@ -42,7 +42,6 @@ jobs:
         run: |
           npm run build
       - name: Deploy
-        # scripts are in 'package.json'
+        # script 'deploy' in 'package.json'
         run: |
-          npm run pre-deploy
           npm run deploy
