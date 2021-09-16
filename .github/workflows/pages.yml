@@ -1,35 +1,51 @@
-name: GitHub Pages
-
-env:
-  DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
-
+name: Angular GitHub CI
 on:
-  pull_request:
+  pull_request: #remove
   push:
     branches:
       - main
 
 jobs:
-  build:
+  ci:
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v1
-        with:
-          DEPLOY_TOKEN: ${{ env.DEPLOY_TOKEN }}
-          GITHUB_REPOSITORY: ${{ env.GITHUB_REPOSITORY }}
-          GITHUB_ACTOR: ${{ env.GITHUB_ACTOR }}
-      - run: chmod +x ./deployment/update-gh-pages.sh
-      - run: ./deployment/update-gh-pages.sh
 
-      - uses: actions/setup-node@v1
+    strategy:
+      matrix:
+        node-version: [10.x, 12.x]
+
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Use Node.js ${{ matrix.node-version }}
+        uses: actions/setup-node@v1
         with:
-          node-version: 12
-      - uses: actions/cache@v1
+          node-version: ${{ matrix.node-version }}
+
+      - name: Cache node modules
+        id: cache-nodemodules
+        uses: actions/cache@v2
+        env:
+          cache-name: cache-node-modules
         with:
-          path: ~/.npm
-          key: ${{ runner.OS }}-node-${{ hashFiles('**/package-lock.json') }}
+          # caching node_modules
+          path: node_modules
+          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
           restore-keys: |
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
-      - run: npm install-ci-test
+      - name: Install Dependencies
+        if: steps.cache-nodemodules.outputs.cache-hit != 'true'
+        run: |
+          npm ci
+      - name: Build
+        run: |
+          npm run build -- --prod
+      - name: Lint
+        run: |
+          npm run lint
+      - name: Test
+        run: |
+          npm run test -- --prod
+  view raw
+  build angular app with github actions.yml hosted with ❤ by GitHub
