@@ -19,7 +19,7 @@ jobs:
         with:
           DEPLOY_TOKEN: ${{ secrets.DEPLOY_TOKEN }}
       - run: chmod +x ./deployment/update-gh-pages.sh
-      - run: sudo ./deployment/update-gh-pages.sh
+      - run: ./deployment/update-gh-pages.sh
 
       - uses: actions/setup-node@v1
         with:
