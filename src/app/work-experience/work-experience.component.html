@@ -1,0 +1,29 @@
+<mat-grid-list cols="4" rowHeight="2:1">
+  <mat-grid-tile colspan="1"></mat-grid-tile>
+  <mat-grid-tile colspan="2">Title for work experience</mat-grid-tile>
+  <mat-grid-tile colspan="1"></mat-grid-tile>
+  <mat-grid-tile colspan="4">
+    <mat-accordion>
+      <!-- techem -->
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title>[LOGO] Techem Energy GmbH</mat-panel-title>
+          <mat-panel-description>digital service partner for the real estate industry</mat-panel-description>
+          <mat-icon>bolt</mat-icon>
+        </mat-expansion-panel-header>
+        <mat-form-field appearance="fill">
+          <mat-label>industry</mat-label>
+          <input matInput>
+        <!-- doit input field (locked) vs. table row -->
+        </mat-form-field>
+        <button
+          mat-fab
+          color="primary"
+          matTooltip="welcome page"
+        >
+          <mat-icon>cottage</mat-icon>
+        </button>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </mat-grid-tile>
+</mat-grid-list>
