@@ -19,6 +19,8 @@ import { ClipboardModule } from '@angular/cdk/clipboard';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { TabOverviewComponent } from './tab-overview/tab-overview.component';
 import { AboutMeComponent } from './about-me/about-me.component';
+import { UnderConstructionComponent } from './under-construction/under-construction.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,7 @@ import { AboutMeComponent } from './about-me/about-me.component';
     ToolbarComponent,
     TabOverviewComponent,
     AboutMeComponent,
+    UnderConstructionComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,6 +46,7 @@ import { AboutMeComponent } from './about-me/about-me.component';
     MatDividerModule,
     ClipboardModule,
     MatSnackBarModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

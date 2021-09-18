@@ -1,0 +1,13 @@
+.mat-dialog-title {
+  justify-content: center;
+}
+
+.mat-dialog-actions {
+  justify-content: center;
+}
+
+.close-button {
+  box-shadow: 4px 2px 6px darkslategrey;
+}
+
+
