@@ -6,4 +6,4 @@ ng build
 
 #todo(github ci/cd): 'ng add angular-cli-ghpages'
 
-ng deploy --base-href=anjeyy.github.io
+ng deploy --base-href=anjeyy.github.io --name="automated deployment" --email=automated.gh-pages@bot.github.com

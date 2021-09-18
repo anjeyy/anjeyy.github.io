@@ -1,0 +1,37 @@
+<mat-grid-list cols="4" rowHeight="20em" gutterSize="2em">
+  <mat-grid-tile
+    *ngFor="let tile of tiles"
+    [colspan]="tile.cols"
+    [rowspan]="tile.rows"
+    [style.background]="tile.color"
+  >
+    <mat-card class="my-card">
+      <mat-card-title>Title</mat-card-title>
+      <mat-card-subtitle>Sub-Title</mat-card-subtitle>
+      <mat-card-content>
+        Content,
+        Content,
+        Content,
+        Content,
+        Content,
+        Content,
+        Content,
+        Content,
+        Content,
+        Content,
+        Content,
+        Content,
+        Content,
+        Content,
+        Content,
+        Content,
+        Content,
+        Content,
+
+      </mat-card-content>
+      <mat-card-actions>Container for buttons at the bottom of the card</mat-card-actions>
+      <mat-card-footer>Footer</mat-card-footer>
+    </mat-card>
+    <!--    {{ tile.text }}-->
+  </mat-grid-tile>
+</mat-grid-list>

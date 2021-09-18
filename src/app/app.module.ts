@@ -17,15 +17,18 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatDividerModule } from '@angular/material/divider';
 import { ClipboardModule } from '@angular/cdk/clipboard';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { LandingPageComponent } from './landing-page/landing-page.component';
 import { TabOverviewComponent } from './tab-overview/tab-overview.component';
+import { AboutMeComponent } from './about-me/about-me.component';
+import { UnderConstructionComponent } from './under-construction/under-construction.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
     AppComponent,
     ToolbarComponent,
-    LandingPageComponent,
     TabOverviewComponent,
+    AboutMeComponent,
+    UnderConstructionComponent,
   ],
   imports: [
     BrowserModule,
@@ -43,6 +46,7 @@ import { TabOverviewComponent } from './tab-overview/tab-overview.component';
     MatDividerModule,
     ClipboardModule,
     MatSnackBarModule,
+    MatDialogModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
