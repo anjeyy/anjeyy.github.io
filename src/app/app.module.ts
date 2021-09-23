@@ -24,6 +24,8 @@ import { FlexLayoutModule } from '@angular/flex-layout';
 import { MatExpansionModule } from '@angular/material/expansion';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { UnderConstructionComponent } from './under-construction/under-construction.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -32,6 +34,7 @@ import { MatInputModule } from '@angular/material/input';
     TabOverviewComponent,
     AboutMeComponent,
     WorkExperienceComponent,
+    UnderConstructionComponent
   ],
   imports: [
     BrowserModule,
@@ -53,6 +56,7 @@ import { MatInputModule } from '@angular/material/input';
     MatExpansionModule,
     MatFormFieldModule,
     MatInputModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent],
