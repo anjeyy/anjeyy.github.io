@@ -3,27 +3,61 @@
   <mat-grid-tile colspan="2">Title for work experience</mat-grid-tile>
   <mat-grid-tile colspan="1"></mat-grid-tile>
   <mat-grid-tile colspan="4">
+
     <mat-accordion>
       <!-- techem -->
-      <mat-expansion-panel hideToggle>
+      <mat-expansion-panel>
         <mat-expansion-panel-header>
-          <mat-panel-title>[LOGO] Techem Energy GmbH</mat-panel-title>
+          <mat-panel-title>
+            <!-- doit make icon work/replace -->
+            <mat-icon svgIcon="techem-dark" aria-hidden="false"></mat-icon>
+            Techem Energy GmbH
+          </mat-panel-title>
           <mat-panel-description>digital service partner for the real estate industry</mat-panel-description>
-          <mat-icon>bolt</mat-icon>
+          <mat-icon color="primary">other_houses</mat-icon>
         </mat-expansion-panel-header>
-        <mat-form-field appearance="fill">
-          <mat-label>industry</mat-label>
-          <input matInput>
-        <!-- doit input field (locked) vs. table row -->
-        </mat-form-field>
-        <button
-          mat-fab
-          color="primary"
-          matTooltip="welcome page"
-        >
-          <mat-icon>cottage</mat-icon>
-        </button>
+
+        <!-- doit work experience container, with displaying information! -> *ngFor -->
+        <!-- doit display accordian correctly for height!!-->
+        <mat-expansion-panel disabled>
+          <mat-expansion-panel-header >
+            <mat-panel-title style="color: gray">role</mat-panel-title>
+            <mat-panel-description style="color: darkslategrey">software engineer</mat-panel-description>
+          </mat-expansion-panel-header>
+        </mat-expansion-panel>
+        <mat-expansion-panel disabled>
+          <mat-expansion-panel-header>
+            <mat-panel-title style="color: gray">industry</mat-panel-title>
+            <mat-panel-description style="color: darkslategrey">energy real estate industry</mat-panel-description>
+          </mat-expansion-panel-header>
+        </mat-expansion-panel>
+        <mat-expansion-panel disabled>
+          <mat-expansion-panel-header>
+            <mat-panel-title style="color: gray">period</mat-panel-title>
+            <mat-panel-description style="color: darkslategrey">01.07.2019 - 01.01.2021</mat-panel-description>
+          </mat-expansion-panel-header>
+        </mat-expansion-panel>
+        <mat-expansion-panel disabled>
+          <mat-expansion-panel-header>
+            <mat-panel-title style="color: gray">description</mat-panel-title>
+            <mat-panel-description style="color: darkslategrey">
+              my job description here
+            </mat-panel-description>
+          </mat-expansion-panel-header>
+        </mat-expansion-panel>
+
+<!--        <mat-card>-->
+<!--          <mat-card-subtitle>role</mat-card-subtitle>-->
+<!--          <mat-card-content>software engineer</mat-card-content>-->
+<!--          <mat-card-subtitle>industry</mat-card-subtitle>-->
+<!--          <mat-card-content>energy real estate industry</mat-card-content>-->
+<!--          <mat-card-subtitle>period</mat-card-subtitle>-->
+<!--          <mat-card-content></mat-card-content>-->
+<!--        </mat-card>-->
       </mat-expansion-panel>
+
+      <mat-divider></mat-divider>
+
     </mat-accordion>
   </mat-grid-tile>
 </mat-grid-list>

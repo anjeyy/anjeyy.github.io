@@ -26,6 +26,8 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { UnderConstructionComponent } from './under-construction/under-construction.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatTableModule } from '@angular/material/table';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 
 @NgModule({
   declarations: [
@@ -34,7 +36,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     TabOverviewComponent,
     AboutMeComponent,
     WorkExperienceComponent,
-    UnderConstructionComponent
+    UnderConstructionComponent,
   ],
   imports: [
     BrowserModule,
@@ -56,7 +58,9 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatExpansionModule,
     MatFormFieldModule,
     MatInputModule,
-    MatDialogModule
+    MatDialogModule,
+    MatTableModule,
+    MatDatepickerModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

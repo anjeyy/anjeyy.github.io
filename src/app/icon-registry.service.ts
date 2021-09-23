@@ -12,6 +12,8 @@ export class IconRegistryService {
   private xingUrl: string = 'assets/icons/xing.svg';
   private twitterUrl: string = 'assets/icons/twitter.svg';
 
+  private techemUrl: string = 'assets/icons/techem.svg';
+
   constructor(
     private domSanitizer: DomSanitizer,
     public matIconRegistry: MatIconRegistry
@@ -38,6 +40,11 @@ export class IconRegistryService {
       .addSvgIcon(
         'twitter-dark',
         this.domSanitizer.bypassSecurityTrustResourceUrl(this.twitterUrl)
+      )
+      .addSvgIcon(
+        'techem-dark',
+        this.domSanitizer.bypassSecurityTrustResourceUrl(this.techemUrl),
+        { viewBox: '0 0 24 24' }
       );
   }
 }
