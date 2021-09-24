@@ -19,8 +19,15 @@ import { ClipboardModule } from '@angular/cdk/clipboard';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { TabOverviewComponent } from './tab-overview/tab-overview.component';
 import { AboutMeComponent } from './about-me/about-me.component';
+import { WorkExperienceComponent } from './work-experience/work-experience.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
 import { UnderConstructionComponent } from './under-construction/under-construction.component';
 import { MatDialogModule } from '@angular/material/dialog';
+import { MatTableModule } from '@angular/material/table';
+import { MatDatepickerModule } from '@angular/material/datepicker';
 
 @NgModule({
   declarations: [
@@ -28,6 +35,7 @@ import { MatDialogModule } from '@angular/material/dialog';
     ToolbarComponent,
     TabOverviewComponent,
     AboutMeComponent,
+    WorkExperienceComponent,
     UnderConstructionComponent,
   ],
   imports: [
@@ -46,7 +54,13 @@ import { MatDialogModule } from '@angular/material/dialog';
     MatDividerModule,
     ClipboardModule,
     MatSnackBarModule,
+    FlexLayoutModule,
+    MatExpansionModule,
+    MatFormFieldModule,
+    MatInputModule,
     MatDialogModule,
+    MatTableModule,
+    MatDatepickerModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

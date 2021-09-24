@@ -1,0 +1,46 @@
+<mat-grid-list cols="4" rowHeight="2:1">
+  <mat-grid-tile colspan="1"></mat-grid-tile>
+  <mat-grid-tile colspan="2">Title for work experience</mat-grid-tile>
+  <mat-grid-tile colspan="4" rowspan="2" >
+
+    <mat-accordion class="headers-align">
+      <mat-expansion-panel *ngFor="let company of myCompanyContainer">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <mat-icon [svgIcon]=company.buttonIcon (click)="goToLinkWithNewTab(company.url)"></mat-icon>
+            &nbsp; {{company.companyName}}
+          </mat-panel-title>
+          <mat-panel-description>{{company.slogan}}</mat-panel-description>
+          <mat-icon color="primary">{{company.icon}}</mat-icon>
+        </mat-expansion-panel-header>
+        <mat-expansion-panel disabled>
+          <mat-expansion-panel-header >
+            <mat-panel-title style="color: gray">{{placeholderContainer.role}}</mat-panel-title>
+            <mat-panel-description style="color: darkslategrey">{{company.role}}</mat-panel-description>
+          </mat-expansion-panel-header>
+        </mat-expansion-panel>
+        <mat-expansion-panel disabled>
+          <mat-expansion-panel-header>
+            <mat-panel-title style="color: gray">{{placeholderContainer.industry}}</mat-panel-title>
+            <mat-panel-description style="color: darkslategrey">{{company.industry}}</mat-panel-description>
+          </mat-expansion-panel-header>
+        </mat-expansion-panel>
+        <mat-expansion-panel disabled>
+          <mat-expansion-panel-header>
+            <mat-panel-title style="color: gray">{{placeholderContainer.period}}</mat-panel-title>
+            <mat-panel-description style="color: darkslategrey">{{company.period}}</mat-panel-description>
+          </mat-expansion-panel-header>
+        </mat-expansion-panel>
+        <mat-expansion-panel disabled>
+          <mat-expansion-panel-header>
+            <mat-panel-title style="color: gray">{{placeholderContainer.description}}</mat-panel-title>
+            <mat-panel-description style="color: darkslategrey">{{company.description}}</mat-panel-description>
+          </mat-expansion-panel-header>
+        </mat-expansion-panel>
+      </mat-expansion-panel>
+
+      <mat-divider></mat-divider>
+
+    </mat-accordion>
+  </mat-grid-tile>
+</mat-grid-list>
