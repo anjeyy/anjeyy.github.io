@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { myPersonalUrls, PersonalUrls } from '../PersonalUrls';
+import { myPersonalUrls, PersonalUrls } from '../personal-urls';
 import { MatSnackBar } from '@angular/material/snack-bar';
 
 @Component({

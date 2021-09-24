@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import {
+  CompanyContainer,
+  myCompanyContainer,
+  placeholderContainer,
+} from './company-container';
 
 @Component({
   selector: 'app-work-experience',
@@ -6,20 +11,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./work-experience.component.css'],
 })
 export class WorkExperienceComponent implements OnInit {
-  displayedColumns: string[] = ['position', 'name'];
-  dataSource = ELEMENT_DATA;
+  placeholderContainer: CompanyContainer = placeholderContainer;
+  myCompanyContainer: CompanyContainer[] = myCompanyContainer;
 
   constructor() {}
 
   ngOnInit(): void {}
 }
-
-export interface PeriodicElement {
-  name: string;
-  position: number;
-}
-
-const ELEMENT_DATA: PeriodicElement[] = [
-  { position: 1, name: 'Hydrogen' },
-  { position: 2, name: 'Helium' },
-];

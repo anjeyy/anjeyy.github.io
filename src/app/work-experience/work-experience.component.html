@@ -1,59 +1,42 @@
 <mat-grid-list cols="4" rowHeight="2:1">
   <mat-grid-tile colspan="1"></mat-grid-tile>
   <mat-grid-tile colspan="2">Title for work experience</mat-grid-tile>
-  <mat-grid-tile colspan="1"></mat-grid-tile>
-  <mat-grid-tile colspan="4">
+  <mat-grid-tile colspan="4" rowspan="2" >
 
-    <mat-accordion>
-      <!-- techem -->
-      <mat-expansion-panel>
+    <mat-accordion class="headers-align">
+      <mat-expansion-panel *ngFor="let company of myCompanyContainer">
         <mat-expansion-panel-header>
           <mat-panel-title>
-            <!-- doit make icon work/replace -->
-            <mat-icon svgIcon="techem-dark" aria-hidden="false"></mat-icon>
-            Techem Energy GmbH
+            <mat-icon [svgIcon]=company.buttonIcon></mat-icon>
+            &nbsp; {{company.companyName}}
           </mat-panel-title>
-          <mat-panel-description>digital service partner for the real estate industry</mat-panel-description>
-          <mat-icon color="primary">other_houses</mat-icon>
+          <mat-panel-description>{{company.slogan}}</mat-panel-description>
+          <mat-icon color="primary">{{company.icon}}</mat-icon>
         </mat-expansion-panel-header>
-
-        <!-- doit work experience container, with displaying information! -> *ngFor -->
-        <!-- doit display accordian correctly for height!!-->
         <mat-expansion-panel disabled>
           <mat-expansion-panel-header >
-            <mat-panel-title style="color: gray">role</mat-panel-title>
-            <mat-panel-description style="color: darkslategrey">software engineer</mat-panel-description>
+            <mat-panel-title style="color: gray">{{placeholderContainer.role}}</mat-panel-title>
+            <mat-panel-description style="color: darkslategrey">{{company.role}}</mat-panel-description>
           </mat-expansion-panel-header>
         </mat-expansion-panel>
         <mat-expansion-panel disabled>
           <mat-expansion-panel-header>
-            <mat-panel-title style="color: gray">industry</mat-panel-title>
-            <mat-panel-description style="color: darkslategrey">energy real estate industry</mat-panel-description>
+            <mat-panel-title style="color: gray">{{placeholderContainer.industry}}</mat-panel-title>
+            <mat-panel-description style="color: darkslategrey">{{company.industry}}</mat-panel-description>
           </mat-expansion-panel-header>
         </mat-expansion-panel>
         <mat-expansion-panel disabled>
           <mat-expansion-panel-header>
-            <mat-panel-title style="color: gray">period</mat-panel-title>
-            <mat-panel-description style="color: darkslategrey">01.07.2019 - 01.01.2021</mat-panel-description>
+            <mat-panel-title style="color: gray">{{placeholderContainer.period}}</mat-panel-title>
+            <mat-panel-description style="color: darkslategrey">{{company.period}}</mat-panel-description>
           </mat-expansion-panel-header>
         </mat-expansion-panel>
         <mat-expansion-panel disabled>
           <mat-expansion-panel-header>
-            <mat-panel-title style="color: gray">description</mat-panel-title>
-            <mat-panel-description style="color: darkslategrey">
-              my job description here
-            </mat-panel-description>
+            <mat-panel-title style="color: gray">{{placeholderContainer.description}}</mat-panel-title>
+            <mat-panel-description style="color: darkslategrey">{{company.description}}</mat-panel-description>
           </mat-expansion-panel-header>
         </mat-expansion-panel>
-
-<!--        <mat-card>-->
-<!--          <mat-card-subtitle>role</mat-card-subtitle>-->
-<!--          <mat-card-content>software engineer</mat-card-content>-->
-<!--          <mat-card-subtitle>industry</mat-card-subtitle>-->
-<!--          <mat-card-content>energy real estate industry</mat-card-content>-->
-<!--          <mat-card-subtitle>period</mat-card-subtitle>-->
-<!--          <mat-card-content></mat-card-content>-->
-<!--        </mat-card>-->
       </mat-expansion-panel>
 
       <mat-divider></mat-divider>

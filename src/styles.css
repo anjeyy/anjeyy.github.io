@@ -11,3 +11,7 @@ body {
 mat-dialog-container {
   background: slategrey !important;
 }
+
+.mat-grid-tile {
+  background: floralwhite;
+}

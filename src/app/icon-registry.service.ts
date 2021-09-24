@@ -12,7 +12,9 @@ export class IconRegistryService {
   private xingUrl: string = 'assets/icons/xing.svg';
   private twitterUrl: string = 'assets/icons/twitter.svg';
 
+  private wmgruppeUrl: string = 'assets/icons/wm-gruppe.svg';
   private techemUrl: string = 'assets/icons/techem.svg';
+  private sinovoUrl: string = 'assets/icons/sinovo.svg';
 
   constructor(
     private domSanitizer: DomSanitizer,
@@ -42,9 +44,16 @@ export class IconRegistryService {
         this.domSanitizer.bypassSecurityTrustResourceUrl(this.twitterUrl)
       )
       .addSvgIcon(
+        'wmgruppe-dark',
+        this.domSanitizer.bypassSecurityTrustResourceUrl(this.wmgruppeUrl)
+      )
+      .addSvgIcon(
         'techem-dark',
-        this.domSanitizer.bypassSecurityTrustResourceUrl(this.techemUrl),
-        { viewBox: '0 0 24 24' }
+        this.domSanitizer.bypassSecurityTrustResourceUrl(this.techemUrl)
+      )
+      .addSvgIcon(
+        'sinovo-dark',
+        this.domSanitizer.bypassSecurityTrustResourceUrl(this.sinovoUrl)
       );
   }
 }
