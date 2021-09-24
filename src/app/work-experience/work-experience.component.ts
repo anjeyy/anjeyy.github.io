@@ -17,4 +17,8 @@ export class WorkExperienceComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {}
+
+  goToLinkWithNewTab(url: string): void {
+    window.open(url, '_blank');
+  }
 }

@@ -7,7 +7,7 @@
       <mat-expansion-panel *ngFor="let company of myCompanyContainer">
         <mat-expansion-panel-header>
           <mat-panel-title>
-            <mat-icon [svgIcon]=company.buttonIcon></mat-icon>
+            <mat-icon [svgIcon]=company.buttonIcon (click)="goToLinkWithNewTab(company.url)"></mat-icon>
             &nbsp; {{company.companyName}}
           </mat-panel-title>
           <mat-panel-description>{{company.slogan}}</mat-panel-description>

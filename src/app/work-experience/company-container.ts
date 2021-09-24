@@ -7,6 +7,7 @@ export interface CompanyContainer {
   description: string;
   icon: string;
   buttonIcon: string;
+  url: string;
 }
 
 export const placeholderContainer: CompanyContainer = {
@@ -18,6 +19,7 @@ export const placeholderContainer: CompanyContainer = {
   description: 'description',
   icon: 'icon',
   buttonIcon: 'button icon',
+  url: 'url',
 };
 
 export const myCompanyContainer: CompanyContainer[] = [
@@ -30,6 +32,7 @@ export const myCompanyContainer: CompanyContainer[] = [
     description: 'my job description here',
     icon: 'attach_money',
     buttonIcon: 'wmgruppe-dark',
+    url: 'https://www.wmgruppe.de/index.php',
   },
   {
     companyName: 'Techem Energy Services',
@@ -40,6 +43,7 @@ export const myCompanyContainer: CompanyContainer[] = [
     description: 'my job description here',
     icon: 'house',
     buttonIcon: 'techem-dark',
+    url: 'https://www.techem.com/corp/en',
   },
   {
     companyName: 'SINOVO business solutions',
@@ -50,5 +54,6 @@ export const myCompanyContainer: CompanyContainer[] = [
     description: 'my job description here',
     icon: 'computer',
     buttonIcon: 'sinovo-dark',
+    url: 'https://www.sinovo.de/de/',
   },
 ];
